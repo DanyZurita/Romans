@@ -4,17 +4,17 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
-import edu.elsmancs.romans.NumeroRomano;
+import edu.elsmancs.romans.RomanSymbols;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class NumeroRomanoTest {
+public class RomanSymbolsTest {
 
-    public static NumeroRomano numeroRomano;
+    public static RomanSymbols numeroRomano;
 
     @BeforeClass
     public static void setup() {
-        numeroRomano = new NumeroRomano();
+        numeroRomano = new RomanSymbols();
         numeroRomano.initRegexDicionario();
     }
 

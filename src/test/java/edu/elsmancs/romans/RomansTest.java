@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
-import edu.elsmancs.romans.NumerosRomanos;
+import edu.elsmancs.romans.NumeroRomano;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

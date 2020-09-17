@@ -26,19 +26,19 @@ public class RomanSymbolsTest {
     public void grupo_M_test() {
 
         String testCase = "M";
-        numeroRomano.setNumeroRomano(testCase);
+        numeroRomano.setRomanSymbols(testCase);
         assertEquals(1000, numeroRomano.toDecimal());
 
         testCase = "UMMU";
-        numeroRomano.setNumeroRomano(testCase);
+        numeroRomano.setRomanSymbols(testCase);
         assertEquals(2000, numeroRomano.toDecimal());
 
         testCase = "UMMMU";
-        numeroRomano.setNumeroRomano(testCase);
+        numeroRomano.setRomanSymbols(testCase);
         assertEquals(3000, numeroRomano.toDecimal());
 
         testCase = "UCMU";
-        numeroRomano.setNumeroRomano(testCase);
+        numeroRomano.setRomanSymbols(testCase);
         assertNotEquals(1000, numeroRomano.toDecimal());
 
         /**
@@ -53,7 +53,7 @@ public class RomanSymbolsTest {
     public void tres_repeticiones_C_test() {
 
         String testCase = "UMMMUCCCU";
-        numeroRomano.setNumeroRomano(testCase);
+        numeroRomano.setRomanSymbols(testCase);
         assertEquals(3300, numeroRomano.toDecimal());
     }
 
@@ -61,7 +61,7 @@ public class RomanSymbolsTest {
     public void tres_repeticiones_X_test() {
 
         String testCase = "UMMMUXXXU";
-        numeroRomano.setNumeroRomano(testCase);
+        numeroRomano.setRomanSymbols(testCase);
 
         assertEquals(3030, numeroRomano.toDecimal());
     }
@@ -70,7 +70,7 @@ public class RomanSymbolsTest {
     public void tres_repeticiones_I_test() {
 
         String testCase = "UMMMUIIIU";
-        numeroRomano.setNumeroRomano(testCase);
+        numeroRomano.setRomanSymbols(testCase);
 
         assertEquals(3003, numeroRomano.toDecimal());
     }
@@ -79,11 +79,11 @@ public class RomanSymbolsTest {
     public void una_D_test() {
 
         String testCase = "UMMMUDUIIIU";
-        numeroRomano.setNumeroRomano(testCase);
+        numeroRomano.setRomanSymbols(testCase);
         assertEquals(3503, numeroRomano.toDecimal());
 
         testCase = "MMMUCDUIIIU";
-        numeroRomano.setNumeroRomano(testCase);
+        numeroRomano.setRomanSymbols(testCase);
         assertNotEquals(3503, numeroRomano.toDecimal());
     }
 
@@ -98,11 +98,11 @@ public class RomanSymbolsTest {
     public void grupo_C_DM_test() {
 
         String testCase = "UCDU";
-        numeroRomano.setNumeroRomano(testCase);
+        numeroRomano.setRomanSymbols(testCase);
         assertEquals(400, numeroRomano.toDecimal());
 
         testCase = "UCMU";
-        numeroRomano.setNumeroRomano(testCase);
+        numeroRomano.setRomanSymbols(testCase);
         assertEquals(900, numeroRomano.toDecimal());
     }
 
@@ -110,11 +110,11 @@ public class RomanSymbolsTest {
     public void grupo_X_LC_test() {
 
         String testCase = "UXLU";
-        numeroRomano.setNumeroRomano(testCase);
+        numeroRomano.setRomanSymbols(testCase);
         assertEquals(40, numeroRomano.toDecimal());  
 
         testCase = "UXCU";
-        numeroRomano.setNumeroRomano(testCase);
+        numeroRomano.setRomanSymbols(testCase);
         assertEquals(90, numeroRomano.toDecimal());        
     }
 
@@ -122,43 +122,43 @@ public class RomanSymbolsTest {
     public void grupo_I_VX_test() {
 
         String testCase = "UIVU";
-        numeroRomano.setNumeroRomano(testCase);
+        numeroRomano.setRomanSymbols(testCase);
         assertEquals(4, numeroRomano.toDecimal());  
 
         testCase = "UIXU";
-        numeroRomano.setNumeroRomano(testCase);
+        numeroRomano.setRomanSymbols(testCase);
         assertEquals(9, numeroRomano.toDecimal());  
     }
 
     @Test
     public void grupos_sumatorios_tres_digitos_test() {
         String test = "MMMDCCCLXXXVIII"; // 3888
-        numeroRomano.setNumeroRomano(test);
+        numeroRomano.setRomanSymbols(test);
         assertEquals(3888, numeroRomano.toDecimal());
     }
 
     @Test
     public void grupos_sumatorios_test() {
         String test = "MMDCCLXXVII"; // 2777
-        numeroRomano.setNumeroRomano(test);
+        numeroRomano.setRomanSymbols(test);
         assertEquals(2777, numeroRomano.toDecimal());
     }
 
     @Test
     public void grupos_substractivos_test() {
         String test = "CDXLIV"; // 444
-        numeroRomano.setNumeroRomano(test);
+        numeroRomano.setRomanSymbols(test);
         assertEquals(444, numeroRomano.toDecimal());
 
         test = "CDXXXIX"; // 439
-        numeroRomano.setNumeroRomano(test);
+        numeroRomano.setRomanSymbols(test);
         assertEquals(439, numeroRomano.toDecimal());
     }
 
     @Test
     public void initArrayRegex_test() {
         String test = "V";
-        numeroRomano.setNumeroRomano(test);
+        numeroRomano.setRomanSymbols(test);
         assertEquals(2, numeroRomano.getRegexDiccionario().longitud());
         assertEquals(5, numeroRomano.valorDecimal(test));
         assertEquals("(?<!C)[DM]|(?<!X)[LC](?![DM])|(?<!I)[VX](?![LC])|I(?![VX])", numeroRomano.getRegexDiccionario().getRegexValue("grupoSumatorio"));
@@ -168,7 +168,7 @@ public class RomanSymbolsTest {
     @Test
     public void toDecimal() {
         String test = "V";
-        numeroRomano.setNumeroRomano(test);
+        numeroRomano.setRomanSymbols(test);
         assertEquals(2, numeroRomano.getExpresionesRegulares().size());
         assertTrue(numeroRomano.getRegexDiccionario().getValues().contains("(?<!C)[DM]|(?<!X)[LC](?![DM])|(?<!I)[VX](?![LC])|I(?![VX])"));
         assertTrue(numeroRomano.getRegexDiccionario().getValues().contains("(C[DM])|(X[LC])|(I[VX])"));		
@@ -177,16 +177,16 @@ public class RomanSymbolsTest {
     @Test
     public void valorDecimal_test() {
         String test = "V";
-        numeroRomano.setNumeroRomano(test);
+        numeroRomano.setRomanSymbols(test);
         assertEquals(2, numeroRomano.getRegexDiccionario().getRegex().size());
         assertEquals(5, numeroRomano.valorDecimal(test));
 
         test = "IV"; 
-        numeroRomano.setNumeroRomano(test);
+        numeroRomano.setRomanSymbols(test);
         assertEquals(4, numeroRomano.valorDecimal(test));
 
         test = "CM"; 
-        numeroRomano.setNumeroRomano(test);
+        numeroRomano.setRomanSymbols(test);
         assertEquals(900, numeroRomano.valorDecimal(test));
 
         /**

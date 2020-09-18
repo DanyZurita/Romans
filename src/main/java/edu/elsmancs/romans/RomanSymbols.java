@@ -6,7 +6,7 @@ public class RomanSymbols {
 	private int totalDecimalValue = 0;
 	
 	public void setRomanSymbols(String symbolsInput) {
-		romanSymbols = symbolsInput;
+		this.romanSymbols = symbolsInput;
 	}
 	
 	
